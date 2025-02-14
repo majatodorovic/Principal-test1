@@ -30,9 +30,8 @@ export default function Distribution({ data, lang }: any) {
   };
 
   return (
-      <section data-aos="fade-up">[]
+    <section data-aos="fade-up">
       {/* Background Image for Small Screens */}
-
       <div className="absolute bottom-0 right-0 z-0 h-[40%] w-full sm:h-[50%]">
         <div className="relative h-full w-full bg-gradient-to-r from-white to-white/70">
           <div className="absolute left-0 top-0 h-10 w-full bg-gradient-to-b from-white to-transparent"></div>
@@ -88,7 +87,6 @@ export default function Distribution({ data, lang }: any) {
           </div>
         </div>
         {/* Distribution Section */}
-
         <div className="paddingInSection relative mx-auto flex w-full max-w-[1760px] flex-col-reverse items-center gap-10 !py-0 lg:flex-row xl:!p-0">
           <div className="h-full w-full flex-1 overflow-hidden rounded-[32px] sm:w-2/3 sm:rounded-[64px] lg:w-full xl:block">
             <Swiper
@@ -122,7 +120,7 @@ export default function Distribution({ data, lang }: any) {
                     className="h-[250px] w-full object-cover sm:h-[400px] md:h-[500px] lg:h-[595px]"
                     onPlay={handleVideoPlay}
                     onEnded={handleVideoEnd}
-                    />
+                  />
                 </SwiperSlide>
               )}
               {data.distribution.images?.map((image: string, index: number) => (
@@ -133,7 +131,7 @@ export default function Distribution({ data, lang }: any) {
                     width={1000}
                     height={100}
                     className="h-[250px] w-full object-cover sm:h-[400px] md:h-[500px] lg:h-[595px]"
-                    />
+                  />
                 </SwiperSlide>
               ))}
               <button
