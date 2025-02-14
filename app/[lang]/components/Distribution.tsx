@@ -14,7 +14,7 @@ export default function Distribution({ data, lang }: any) {
   }, []);
   const swiperRef = useRef<any>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const setIsVideoPlaying = useState(false)[1];
 
 
   const handleVideoPlay = () => {
@@ -119,7 +119,7 @@ export default function Distribution({ data, lang }: any) {
                     autoPlay
                     muted
                     loop={false}
-                    className="w-full h-[250px] sm:h-[400px] md:h-[500px] lg:h-[595px] object-cover"
+                  className="h-[250px] w-full object-cover sm:h-[400px] md:h-[500px] lg:h-[595px]"
                     onPlay={handleVideoPlay}
                     onEnded={handleVideoEnd}
                   />
@@ -134,7 +134,7 @@ export default function Distribution({ data, lang }: any) {
                     alt={`Distribution ${index + 1}`}
                     width={1000}
                     height={100}
-                    className="w-full h-[250px] sm:h-[400px] md:h-[500px] lg:h-[595px] object-cover"
+                className="h-[250px] w-full object-cover sm:h-[400px] md:h-[500px] lg:h-[595px]"
                   />
                 </SwiperSlide>
 
