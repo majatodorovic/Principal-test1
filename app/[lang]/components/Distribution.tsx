@@ -29,8 +29,6 @@ export default function Distribution({ data, lang }: any) {
     }, 1500); // Mala pauza pre nastavka autoplay-a
   };
 
-
-
   return (
     <section data-aos="fade-up">
       {/* Background Image for Small Screens */}
