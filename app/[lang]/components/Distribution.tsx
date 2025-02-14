@@ -31,7 +31,7 @@ export default function Distribution({ data, lang }: any) {
   };
 
   return (
-    <section data-aos="fade-up">
+    <section data-aos="fade-up">[]
       {/* Background Image for Small Screens */}
       <div className="absolute bottom-0 right-0 z-0 h-[40%] w-full sm:h-[50%]">
         <div className="relative h-full w-full bg-gradient-to-r from-white to-white/70">
