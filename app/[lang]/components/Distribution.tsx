@@ -14,7 +14,7 @@ export default function Distribution({ data, lang }: any) {
   }, []);
   const swiperRef = useRef<any>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isVideoPlayin, setIsVideoPlaying] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
 
   const handleVideoPlay = () => {
