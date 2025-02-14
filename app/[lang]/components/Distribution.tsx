@@ -29,18 +29,6 @@ export default function Distribution({ data, lang }: any) {
     }, 1500); // Mala pauza pre nastavka autoplay-a
   };
 
-  const handleSlideChange = (swiper: any) => {
-    if (swiper.activeIndex === 0 && data.distribution.video) {
-      // Ako smo ponovo na videu, restartuj ga
-      if (videoRef.current) {
-        videoRef.current.currentTime = 0; // Vrati na početak
-        videoRef.current.play(); // Ponovo pokreni video
-      }
-      swiper.autoplay.stop(); // Pauziraj autoplay dok traje video
-    } else {
-      swiper.autoplay.start(); // Nastavi autoplay za slike
-    }
-  };
 
 
   return (
@@ -100,8 +88,8 @@ export default function Distribution({ data, lang }: any) {
             </div>
           </div>
         </div>
-       {/* Distribution Section */}
-       <div className="paddingInSection relative mx-auto flex w-full max-w-[1760px] flex-col-reverse items-center gap-10 !py-0 lg:flex-row xl:!p-0">
+        {/* Distribution Section */}
+        <div className="paddingInSection relative mx-auto flex w-full max-w-[1760px] flex-col-reverse items-center gap-10 !py-0 lg:flex-row xl:!p-0">
           <div className="h-full w-full flex-1 overflow-hidden rounded-[32px] sm:w-2/3 sm:rounded-[64px] lg:w-full xl:block">
             <Swiper
               modules={[Autoplay]}
