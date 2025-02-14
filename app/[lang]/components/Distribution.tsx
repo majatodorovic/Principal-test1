@@ -113,6 +113,7 @@ export default function Distribution({ data, lang }: any) {
                   <video
                     ref={videoRef}
                     src={data.distribution.video}
+                    autoPlay
                     muted
                     loop={false}
                     playsInline // Dodaj ovo ovde
