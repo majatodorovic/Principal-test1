@@ -30,8 +30,8 @@ export default function Distribution({ data, lang }: any) {
   };
 
   return (
-    <section data-aos="fade-up">[]
-    {/* Background Image for Small Screens */}
+      <section data-aos="fade-up">[]
+      {/* Background Image for Small Screens */}
 
       <div className="absolute bottom-0 right-0 z-0 h-[40%] w-full sm:h-[50%]">
         <div className="relative h-full w-full bg-gradient-to-r from-white to-white/70">
@@ -122,22 +122,20 @@ export default function Distribution({ data, lang }: any) {
                     className="h-[250px] w-full object-cover sm:h-[400px] md:h-[500px] lg:h-[595px]"
                     onPlay={handleVideoPlay}
                     onEnded={handleVideoEnd}
-                  />
-                  </SwiperSlide>
-                  )}
-                  
-                  {data.distribution.images?.map((image: string, index: number) => (
-                    <SwiperSlide key={index}>
-                      <Image
-                        src={image}
-                        alt={`Distribution ${index + 1}`}
-                        width={1000}
-                        height={100}
-                        className="h-[250px] w-full object-cover sm:h-[400px] md:h-[500px] lg:h-[595px]"
-                        />
-                    </SwiperSlide>
-                  ))}
-              
+                    />
+                </SwiperSlide>
+              )}
+              {data.distribution.images?.map((image: string, index: number) => (
+                <SwiperSlide key={index}>
+                  <Image
+                    src={image}
+                    alt={`Distribution ${index + 1}`}
+                    width={1000}
+                    height={100}
+                    className="h-[250px] w-full object-cover sm:h-[400px] md:h-[500px] lg:h-[595px]"
+                    />
+                </SwiperSlide>
+              ))}
               <button
                 className="absolute left-0 top-1/2 z-10 h-full -translate-y-1/2 transform bg-blue p-1"
                 onClick={() => swiperRef.current?.slidePrev()}
@@ -150,7 +148,6 @@ export default function Distribution({ data, lang }: any) {
                   className="whiteFilter h-6 w-6 rotate-90 lg:h-8 lg:w-8"
                 />
               </button>
-
               <button
                 className="absolute right-0 top-1/2 z-10 h-full -translate-y-1/2 transform bg-blue p-1"
                 onClick={() => swiperRef.current?.slideNext()}
@@ -163,7 +160,6 @@ export default function Distribution({ data, lang }: any) {
                   className="whiteFilter h-6 w-6 -rotate-90 lg:h-8 lg:w-8"
                 />
               </button>
-
             </Swiper>
           </div>
           <div className="flex flex-1 flex-col gap-6 xl:pr-[60px]">
