@@ -15,6 +15,7 @@ export default function Distribution({ data, lang }: any) {
   const swiperRef = useRef<any>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const setIsVideoPlaying = useState(false)[1];
+  const [autoplayDelay, setAutoplayDelay] = useState(3000);
 
   const handleVideoPlay = () => {
     setIsVideoPlaying(true);
@@ -26,7 +27,7 @@ export default function Distribution({ data, lang }: any) {
     setTimeout(() => {
       swiperRef.current?.slideNext(); // Nakon završetka videa, prebaci na sledeći slajd
       swiperRef.current?.autoplay.start(); // Ponovo pokreni autoplay
-    }, 1500); // Mala pauza pre nastavka autoplay-a
+    }, 500); // Mala pauza pre nastavka autoplay-a
   };
 
   return (
@@ -91,18 +92,20 @@ export default function Distribution({ data, lang }: any) {
           <div className="h-full w-full flex-1 overflow-hidden rounded-[32px] sm:w-2/3 sm:rounded-[64px] lg:w-full xl:block">
             <Swiper
               modules={[Autoplay]}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              autoplay={{ delay: autoplayDelay, disableOnInteraction: false }}
               loop={true}
               slidesPerView={1}
               onSwiper={(swiper) => (swiperRef.current = swiper)}
               onSlideChange={(swiper) => {
-                if (swiper.activeIndex === 0 && data.distribution.video) {
+                if (swiper.realIndex === 0 && data.distribution.video) {
+                  setAutoplayDelay(15000);
                   swiper.autoplay.stop();
                   if (videoRef.current) {
-                    videoRef.current.currentTime = 0; // Resetuj video
-                    videoRef.current.play(); // Automatski pokreni video
+                    videoRef.current.currentTime = 0;
+                    videoRef.current.play();
                   }
                 } else {
+                  setAutoplayDelay(3000);
                   swiper.autoplay.start();
                 }
               }}
@@ -116,7 +119,7 @@ export default function Distribution({ data, lang }: any) {
                     autoPlay
                     muted
                     loop={false}
-                    playsInline
+                    playsInline // Dodaj ovo ovde
                     className="h-[250px] w-full object-cover sm:h-[400px] md:h-[500px] lg:h-[595px]"
                     onPlay={handleVideoPlay}
                     onEnded={handleVideoEnd}
