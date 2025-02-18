@@ -118,7 +118,6 @@ export default function Distribution({ data, lang }: any) {
                     src={data.distribution.video}
                     autoPlay
                     muted
-                    loop={false}
                     playsInline // Dodaj ovo ovde
                     className="h-[250px] w-full object-cover sm:h-[400px] md:h-[500px] lg:h-[595px]"
                     onPlay={handleVideoPlay}
